@@ -96,9 +96,9 @@ class ZendeskHelper {
 			return `${remoteUri}/tickets`;
 		};
 
-		this.CreateTicket = async (options) => {
+		this.CreateTicket = async (ticketOptions) => {
 			try {
-				const { ticketObject, userObject } = options;
+				const { ticketObject, userObject } = ticketOptions;
 				const _user = await this.CreateUser(userObject);
 				ticketObject.requester_id = _user.id;
 
